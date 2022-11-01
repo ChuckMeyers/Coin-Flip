@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-flow:column wrap;
+    align-items: center;
+}
+
+#flip-button{
+    font-size: 25px;
+}
