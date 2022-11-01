@@ -5,14 +5,9 @@ const querystring = require('querystring');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    const page = url.parse(req.url).pathname;
-    const params = querystring.parse(url.parse(req.url).query);
-
-    let filePath = path.join(__dirname, 'public', req.url === "/" ? 'index.html' : req.url);
-    let extname = path.extname(filePath);
-    console.log(filePath);
-    console.log(page);
-    console.log(extname);
+    const filePath = path.join(__dirname, 'public', req.url === "/" ? 'index.html' : req.url);
+    const notFound = path.join(__dirname, 'public', '404.html');
+    const extname = path.extname(filePath);
 
     let contentType = 'text/html';
 
@@ -38,10 +33,10 @@ switch (extname) {
         if(err) {
           if(err.code == 'ENOENT'){
             //Page not found
-            fs.readFile(path.join(__dirname, 'public', '404.html', (err, data) => {
+            fs.readFile(notFound, (err, data) => {
               res.writeHead(200, {'Content-Type': 'text/html'});
               res.end(data, 'utf8');
-            }))
+            })
           } else {
             //Some server error
             res.writeHead(500);
