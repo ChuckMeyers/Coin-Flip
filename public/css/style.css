@@ -1,10 +1,36 @@
-body{
-    display: flex;
-    justify-content: center;
-    flex-flow:column wrap;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    font-family: 'Righteous', 'sans-serif';
+}
+
+
 #flip-button{
-    font-size: 25px;
+    background-color: rgb(94, 89, 89);
+    color: whitesmoke;
+    width: 20rem;
+    font-size: 40px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px slateblue;
+    font-family: 'Monoton', 'sans-serif';
+}
+.coin-img-container {
+    width: 20rem;
+    clip-path: circle();
+}
+
+#coin-img {
+    padding: 1rem;
+    width: 18rem;
 }
