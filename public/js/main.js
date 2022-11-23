@@ -11,7 +11,7 @@ const  generateFlip = () => {
     } else {
         imgElement.src="/imgs/tails.jpg";
         winner.innerHTML="It's tails!"
-    }}, 3000)
+    }}, 2000)
     imgElement.src="#"
 }
 
